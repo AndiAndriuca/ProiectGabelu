@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Importă BrowserRouter și Routes
+
+import SignUpCompany from "./pages/SignUpCompany";
+import SingUpUser from "./pages/SignUpUser";
+import Agrement from "./pages/Agrement";
+import WelcomePage from "./pages/WelcomePage";
+import UserExampleLayout from "./pages/UserExampleLayout";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />{" "}
+        <Route path="/UserExampleLayout" element={<UserExampleLayout />}></Route>
+        <Route path="/SignUpCompany" element={<SignUpCompany />}></Route>
+        <Route path="/SignUpUser" element={<SingUpUser />}></Route>
+        <Route path="/Agrement" element={<Agrement />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
